@@ -15,9 +15,7 @@
  
  As an example lets calculate the number of nodes of a tree
  ## Pre-Order
- PreOrder Traversal : In simple terms, in the above tree diagram, as the name suggest, pre-order , just think about the root. For pre-order, root must be visited first, than left subtree and at last right subtree.
- Pre-order traversal is to visit the root first. Then traverse the left subtree. Finally, traverse the right subtree.
-
+ Pre-order Traversal : In simple terms, in the above tree diagram, as the name suggest, pre-order , just think about the root. For pre-order, root must be visited first, than left subtree and at last right subtree
 */
 
  // Definition for a binary tree node.
@@ -61,5 +59,39 @@ print(preorderTraversal(root))    //Print: [1,2,3,4,5]
   print(countNodes(root))  // Prints:  5
 
 
+/*:  ## In-order
+ 
+ 
+ 
+ */
+
+func inOrder(_ root: TreeNode?) -> [Int] {
+    guard let root else { return [] }
+    var result = [Int]()
+    result += inOrder(root.left)
+    result.append(root.val)
+     result += inOrder(root.right)
+    return result
+}
+print(inOrder(root))  //Prints: [3, 2, 4, 1, 5]
 
 
+/*:
+
+## Post-Order
+ 
+ For post-order, root must be visited last. First left subtree, then right subtree and finally root.
+*/
+
+
+func postOrder(_ root: TreeNode?) -> [Int] {
+    guard let root else { return [] }
+    var result = [Int]()
+    result += postOrder(root.left)
+    result += postOrder(root.right)
+    result.append(root.val)
+    return result
+    
+}
+
+print( postOrder(root) )  // Prints [3, 4, 2, 5, 1]
