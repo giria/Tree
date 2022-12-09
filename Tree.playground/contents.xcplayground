@@ -3,5 +3,6 @@
     <pages>
         <page name='DFS'/>
         <page name='BFS'/>
+        <page name='Maximum Difference Between Node and Ancestored'/>
     </pages>
 </playground>
